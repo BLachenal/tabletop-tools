@@ -123,6 +123,13 @@ function getProficiencyBonus(level, rank) {
  */
 function getCoverBonus(behindObstacle, takingCover) {
   // TODO
+  if(takingCover){
+    return 4;
+  }else if(behindObstacle){
+    return 2;
+  }else {
+    return 0;
+  }
 }
 
 /**
@@ -139,6 +146,13 @@ function getCoverBonus(behindObstacle, takingCover) {
  */
 function getRemainingHp(maxHp, currentHp, damage) {
   // TODO
+  if(damage >= (maxHp * 2)){
+    return -1;
+  }else if((currentHp - damage) <= 0){
+    return 0;
+  }else{
+    return (currentHp - damage);
+  }
 }
 
 /**
@@ -151,6 +165,7 @@ function getRemainingHp(maxHp, currentHp, damage) {
  */
 function canSee(light, vision) {
   // TODO
+  
 }
 
 /**
