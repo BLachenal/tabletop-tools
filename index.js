@@ -99,7 +99,7 @@ function heal(maxHp, currentHp, healAmount) {
 function getProficiencyBonus(level, rank) {
   // TODO
   if(rank === 'untrained'){
-    return;
+    return level;
   }else if(rank === 'trained' ){
     return level + 2;
   }else if(rank === 'expert'){
@@ -165,7 +165,13 @@ function getRemainingHp(maxHp, currentHp, damage) {
  */
 function canSee(light, vision) {
   // TODO
-  
+  if(light === 'bright' || vision === 'dark'){
+    return true;
+  }else if(light === 'dim' && vision === 'low-light'){
+    return true;
+  }else {
+    return false;
+  }
 }
 
 /**
