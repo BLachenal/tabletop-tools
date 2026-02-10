@@ -7,6 +7,11 @@
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
   // TODO
+  if(isSpellPrepared || hasScroll){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /**
@@ -18,6 +23,11 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  */
 function isHidden(hiding, aware) {
   // TODO
+  if(hiding || !aware){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /**
@@ -29,6 +39,11 @@ function isHidden(hiding, aware) {
  */
 function doesStrikeHit(attack, ac) {
   // TODO
+  if(attack >= ac){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /**
@@ -40,6 +55,12 @@ function doesStrikeHit(attack, ac) {
  */
 function doesStrikeCrit(attack, ac) {
   // TODO
+  const CRITICAL_THRESHOLD = 10; 
+  if(attack >= (ac + CRITICAL_THRESHOLD)){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 /**
@@ -52,6 +73,11 @@ function doesStrikeCrit(attack, ac) {
  */
 function heal(maxHp, currentHp, healAmount) {
   // TODO
+  if((currentHp + healAmount) >= maxHp ){
+    return maxHp;
+  }else{
+    return (currentHp + healAmount);
+  }
 }
 
 /**
@@ -72,6 +98,17 @@ function heal(maxHp, currentHp, healAmount) {
  */
 function getProficiencyBonus(level, rank) {
   // TODO
+  if(rank === 'untrained'){
+    return;
+  }else if(rank === 'trained' ){
+    return level + 2;
+  }else if(rank === 'expert'){
+    return level + 4;
+  }else if(rank === 'master'){
+    return level + 6;
+  }else{
+    return level + 8;
+  }
 }
 
 /**
